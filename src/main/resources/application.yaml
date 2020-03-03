@@ -1,0 +1,12 @@
+#Camunda config
+camunda.bpm:
+  admin-user:
+    id: admin
+    password: admin
+    firstName: Admin
+  filter:
+    create: All tasks
+
+#Processes folder path
+processes:
+  path: processes
