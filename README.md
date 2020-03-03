@@ -8,6 +8,8 @@
 
 Can be found [here](http://localhost:8080/app/welcome/default/#!/login)
 
+Credentials: `admin:admin`
+
 <h2>To test BPM process </h2>
 
 ```
