@@ -9,10 +9,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.rednavis.maas</groupId>
-  <artifactId>bpmn-service</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>bpmn-service</name>
-  <description>Demo project for Spring Boot</description>
+  <artifactId>maas-bpm</artifactId>
+  <version>0.1.APLHA</version>
+  <name>maas-bpm</name>
 
   <properties>
     <java.version>1.8</java.version>

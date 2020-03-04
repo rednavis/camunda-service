@@ -19,6 +19,7 @@ GET http://localhost:8080/test?param=param_value
 Supports optional request parameter `param` that be passed into demo process (default value is `default`)
 
 <h2>TBD</h2>
+* Add tests (and coverage)
 * Configure non-h2 database for Camunda
 * Create and support process that will call our application from it's block
 * Update API for usability
