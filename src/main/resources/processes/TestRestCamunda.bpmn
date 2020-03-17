@@ -4,20 +4,25 @@
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>SequenceFlow_1dc9w07</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:sequenceFlow id="SequenceFlow_1dc9w07" sourceRef="StartEvent_1" targetRef="Task_139itjy" />
+    <bpmn:sequenceFlow id="SequenceFlow_1dc9w07" sourceRef="StartEvent_1" targetRef="Task_0ww0ns0" />
     <bpmn:userTask id="Task_139itjy" name="UserTask">
       <bpmn:extensionElements>
         <camunda:inputOutput>
           <camunda:inputParameter name="stringParameter">${stringParameter}</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
-      <bpmn:incoming>SequenceFlow_1dc9w07</bpmn:incoming>
+      <bpmn:incoming>SequenceFlow_1mb0xsd</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1rfzfpf</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:endEvent id="EndEvent_145x5ce">
       <bpmn:incoming>SequenceFlow_1rfzfpf</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_1rfzfpf" sourceRef="Task_139itjy" targetRef="EndEvent_145x5ce" />
+    <bpmn:sequenceFlow id="SequenceFlow_1mb0xsd" sourceRef="Task_0ww0ns0" targetRef="Task_139itjy" />
+    <bpmn:serviceTask id="Task_0ww0ns0" name="DemoTask" camunda:class="com.rednavis.maas.bpmnservice.delegate.DemoDelegate">
+      <bpmn:incoming>SequenceFlow_1dc9w07</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1mb0xsd</bpmn:outgoing>
+    </bpmn:serviceTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="TestRestCamunda">
@@ -26,18 +31,25 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1dc9w07_di" bpmnElement="SequenceFlow_1dc9w07">
         <di:waypoint x="188" y="125" />
-        <di:waypoint x="276" y="125" />
+        <di:waypoint x="230" y="125" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="UserTask_1hwfoyz_di" bpmnElement="Task_139itjy">
-        <dc:Bounds x="276" y="85" width="100" height="80" />
+        <dc:Bounds x="390" y="85" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_145x5ce_di" bpmnElement="EndEvent_145x5ce">
-        <dc:Bounds x="449" y="107" width="36" height="36" />
+        <dc:Bounds x="572" y="107" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="SequenceFlow_1rfzfpf_di" bpmnElement="SequenceFlow_1rfzfpf">
-        <di:waypoint x="376" y="125" />
-        <di:waypoint x="449" y="125" />
+        <di:waypoint x="490" y="125" />
+        <di:waypoint x="572" y="125" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1mb0xsd_di" bpmnElement="SequenceFlow_1mb0xsd">
+        <di:waypoint x="330" y="125" />
+        <di:waypoint x="390" y="125" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1ov1iqd_di" bpmnElement="Task_0ww0ns0">
+        <dc:Bounds x="230" y="85" width="100" height="80" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>
