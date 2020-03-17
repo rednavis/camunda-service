@@ -10,3 +10,11 @@ camunda.bpm:
 #Processes folder path
 processes:
   path: processes
+
+spring:
+  data:
+    mongodb:
+      database: maas
+      host: localhost
+      port: 27018
+      auto-index-creation: true

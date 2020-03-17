@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  maas-data:
+    container_name: maas-data
+    image: mongo:4.2.3
+    restart: always
+    ports:
+      - '27018:27017'

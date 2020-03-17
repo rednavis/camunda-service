@@ -83,6 +83,16 @@
       <version>7.12.0</version>
     </dependency>
 
+    <dependency>
+      <artifactId>spring-data-mongodb</artifactId>
+      <groupId>org.springframework.data</groupId>
+    </dependency>
+
+    <dependency>
+      <artifactId>mockneat</artifactId>
+      <groupId>net.andreinc.mockneat</groupId>
+      <version>0.3.8</version>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -101,6 +111,14 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <repositories>
+    <repository>
+      <id>Spring</id>
+      <name>Spring Lib Release Repository</name>
+      <url>https://repo.spring.io/libs-release/</url>
+    </repository>
+  </repositories>
 
   <build>
     <plugins>
