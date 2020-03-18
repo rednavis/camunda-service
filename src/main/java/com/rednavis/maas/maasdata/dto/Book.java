@@ -4,7 +4,7 @@ import com.rednavis.maas.maasdata.BookStatus;
 import lombok.Data;
 
 @Data
-public class BookDto {
+public class Book {
 
   private Long id;
   private String title;
