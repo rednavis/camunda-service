@@ -1,7 +1,7 @@
-package com.rednavis.maas.maasdata.mapper;
+package com.rednavis.maas.bpmnservice.maasdata.mapper;
 
-import com.rednavis.maas.maasdata.dto.Book;
-import com.rednavis.maas.maasdata.entity.BookEntity;
+import com.rednavis.maas.bpmnservice.maasdata.dto.Book;
+import com.rednavis.maas.bpmnservice.maasdata.entity.BookEntity;
 import java.util.List;
 import org.mapstruct.Mapper;
 

@@ -1,10 +1,10 @@
-package com.rednavis.maas.maasdata;
+package com.rednavis.maas.bpmnservice.maasdata;
 
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.InsertOneModel;
 import com.mongodb.client.model.WriteModel;
-import com.rednavis.maas.maasdata.entity.BookEntity;
-import com.rednavis.maas.maasdata.repository.BookRepository;
+import com.rednavis.maas.bpmnservice.maasdata.entity.BookEntity;
+import com.rednavis.maas.bpmnservice.maasdata.repository.BookRepository;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;

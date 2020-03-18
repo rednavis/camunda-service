@@ -1,7 +1,7 @@
-package com.rednavis.maas.maasdata.serivce;
+package com.rednavis.maas.bpmnservice.maasdata.serivce;
 
-import com.rednavis.maas.maasdata.BookPage;
-import com.rednavis.maas.maasdata.dto.Book;
+import com.rednavis.maas.bpmnservice.maasdata.BookPage;
+import com.rednavis.maas.bpmnservice.maasdata.dto.Book;
 import java.util.List;
 
 public interface BookService {

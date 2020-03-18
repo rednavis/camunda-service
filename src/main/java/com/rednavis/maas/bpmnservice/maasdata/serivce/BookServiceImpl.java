@@ -1,11 +1,11 @@
-package com.rednavis.maas.maasdata.serivce;
+package com.rednavis.maas.bpmnservice.maasdata.serivce;
 
-import static com.rednavis.maas.maasdata.mapper.MapperProvider.BOOK_MAPPER;
+import static com.rednavis.maas.bpmnservice.maasdata.mapper.MapperProvider.BOOK_MAPPER;
 
-import com.rednavis.maas.maasdata.BookPage;
-import com.rednavis.maas.maasdata.dto.Book;
-import com.rednavis.maas.maasdata.entity.BookEntity;
-import com.rednavis.maas.maasdata.repository.BookRepository;
+import com.rednavis.maas.bpmnservice.maasdata.BookPage;
+import com.rednavis.maas.bpmnservice.maasdata.dto.Book;
+import com.rednavis.maas.bpmnservice.maasdata.entity.BookEntity;
+import com.rednavis.maas.bpmnservice.maasdata.repository.BookRepository;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.glassfish.jersey.internal.guava.Lists;

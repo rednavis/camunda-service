@@ -1,4 +1,4 @@
-package com.rednavis.maas.maasdata.mapper;
+package com.rednavis.maas.bpmnservice.maasdata.mapper;
 
 import lombok.experimental.UtilityClass;
 import org.mapstruct.factory.Mappers;

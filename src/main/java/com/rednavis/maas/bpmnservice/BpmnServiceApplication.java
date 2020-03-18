@@ -1,18 +1,15 @@
 package com.rednavis.maas.bpmnservice;
 
-import com.rednavis.maas.maasdata.GenerateMockBook;
-import com.rednavis.maas.maasdata.MaasDataModule;
+import com.rednavis.maas.bpmnservice.maasdata.GenerateMockBook;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.annotation.Import;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Import({MaasDataModule.class})
 @SpringBootApplication
 public class BpmnServiceApplication {
 

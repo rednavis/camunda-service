@@ -1,6 +1,6 @@
-package com.rednavis.maas.maasdata.entity;
+package com.rednavis.maas.bpmnservice.maasdata.entity;
 
-import com.rednavis.maas.maasdata.BookStatus;
+import com.rednavis.maas.bpmnservice.maasdata.BookStatus;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class BookEntity {
 
   @Id
-  private Long id;
+  private String id;
   private String title;
   private String author;
   private int pageCount;

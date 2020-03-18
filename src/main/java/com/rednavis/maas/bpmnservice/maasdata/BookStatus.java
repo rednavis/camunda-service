@@ -1,4 +1,4 @@
-package com.rednavis.maas.maasdata;
+package com.rednavis.maas.bpmnservice.maasdata;
 
 public enum BookStatus {
   BUY_REQUEST,

@@ -1,12 +1,12 @@
-package com.rednavis.maas.maasdata.dto;
+package com.rednavis.maas.bpmnservice.maasdata.dto;
 
-import com.rednavis.maas.maasdata.BookStatus;
+import com.rednavis.maas.bpmnservice.maasdata.BookStatus;
 import lombok.Data;
 
 @Data
 public class Book {
 
-  private Long id;
+  private String id;
   private String title;
   private String author;
   private int pageCount;
