@@ -7,10 +7,13 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,15 +31,15 @@ public class BookController {
     return bookService.insert(book);
   }
 
-  @PostMapping("/save")
+  @PutMapping("/save")
   public Book save(@RequestBody Book book) {
     return bookService.save(book);
   }
 
   @GetMapping("/findAll")
-  public List<Book> findAllGet(@RequestBody BookPage bookPage) {
-    log.info("findAll get [bookPage: {}]", bookPage);
-    return bookService.findAll(bookPage);
+  public List<Book> findAllGet(@RequestParam int page, @RequestParam int size) {
+    log.info("findAll get [page: {}, size: {}]", page, size);
+    return bookService.findAll(page, size);
   }
 
   @GetMapping("/count")
@@ -44,10 +47,10 @@ public class BookController {
     return bookService.count();
   }
 
-  @PostMapping("/delete")
+  @DeleteMapping("/delete")
   @ResponseStatus(value = HttpStatus.OK)
-  public void delete(@RequestBody Book book) {
-    bookService.delete(book);
+  public void delete(@RequestParam String bookId) {
+    bookService.deleteById(bookId);
   }
 
   @GetMapping("/test1")
@@ -61,11 +64,7 @@ public class BookController {
   @GetMapping("/test2")
   public @ResponseBody
   List<Book> findAllGet() {
-    BookPage bookPage = new BookPage();
-    bookPage.setPage(2);
-    bookPage.setSize(5);
-    log.info("findAll get [bookPage: {}]", bookPage);
-    return bookService.findAll(bookPage);
+    return bookService.findAll(2, 5);
   }
 
   @Data

@@ -1,6 +1,5 @@
 package com.rednavis.maas.bpmnservice.maasdata.serivce;
 
-import com.rednavis.maas.bpmnservice.maasdata.BookPage;
 import com.rednavis.maas.bpmnservice.maasdata.dto.Book;
 import java.util.List;
 
@@ -10,9 +9,9 @@ public interface BookService {
 
   Book save(Book book);
 
-  List<Book> findAll(BookPage bookPage);
+  List<Book> findAll(int page, int size);
 
   long count();
 
-  void delete(Book book);
+  void deleteById(String bookId);
 }

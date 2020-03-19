@@ -2,7 +2,6 @@ package com.rednavis.maas.bpmnservice.maasdata.serivce;
 
 import static com.rednavis.maas.bpmnservice.maasdata.mapper.MapperProvider.BOOK_MAPPER;
 
-import com.rednavis.maas.bpmnservice.maasdata.BookPage;
 import com.rednavis.maas.bpmnservice.maasdata.dto.Book;
 import com.rednavis.maas.bpmnservice.maasdata.entity.BookEntity;
 import com.rednavis.maas.bpmnservice.maasdata.repository.BookRepository;
@@ -35,8 +34,8 @@ public class BookServiceImpl implements BookService {
   }
 
   @Override
-  public List<Book> findAll(BookPage bookPage) {
-    Pageable pageable = PageRequest.of(bookPage.getPage(), bookPage.getSize());
+  public List<Book> findAll(int page, int size) {
+    Pageable pageable = PageRequest.of(page, size);
     Page<BookEntity> bookEntityPage = bookRepository.findAll(pageable);
     List<BookEntity> bookEntityList = Lists.newArrayList(bookEntityPage.iterator());
     return BOOK_MAPPER.listEntityToListDto(bookEntityList);
@@ -48,8 +47,7 @@ public class BookServiceImpl implements BookService {
   }
 
   @Override
-  public void delete(Book book) {
-    BookEntity bookEntity = BOOK_MAPPER.dtoToEntity(book);
-    bookRepository.delete(bookEntity);
+  public void deleteById(String bookId) {
+    bookRepository.deleteById(bookId);
   }
 }
