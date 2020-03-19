@@ -33,12 +33,6 @@ public class BookController {
     return bookService.save(book);
   }
 
-  @PostMapping("/findAll")
-  public List<Book> findAll(@RequestBody BookPage bookPage) {
-    log.info("findAll post [bookPage: {}]", bookPage);
-    return bookService.findAll(bookPage);
-  }
-
   @GetMapping("/findAll")
   public List<Book> findAllGet(@RequestBody BookPage bookPage) {
     log.info("findAll get [bookPage: {}]", bookPage);
