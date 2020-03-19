@@ -43,6 +43,11 @@ public class BookServiceImpl implements BookService {
   }
 
   @Override
+  public long count() {
+    return bookRepository.count();
+  }
+
+  @Override
   public void delete(Book book) {
     BookEntity bookEntity = BOOK_MAPPER.dtoToEntity(book);
     bookRepository.delete(bookEntity);

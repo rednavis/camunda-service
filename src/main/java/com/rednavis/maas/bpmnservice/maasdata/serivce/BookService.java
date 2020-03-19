@@ -12,5 +12,7 @@ public interface BookService {
 
   List<Book> findAll(BookPage bookPage);
 
+  long count();
+
   void delete(Book book);
 }

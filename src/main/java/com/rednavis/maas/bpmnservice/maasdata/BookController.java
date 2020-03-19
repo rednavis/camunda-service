@@ -18,38 +18,36 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping
-//@Produces(MediaType.APPLICATION_JSON_VALUE)
-//@Consumes(MediaType.APPLICATION_JSON_VALUE)
-//@RequestMapping("/api/books")
 @RequiredArgsConstructor
 public class BookController {
 
   private final BookService bookService;
 
   @PostMapping("/insert")
-  public @ResponseBody
-  Book insert(@RequestBody Book book) {
+  public Book insert(@RequestBody Book book) {
     return bookService.insert(book);
   }
 
   @PostMapping("/save")
-  public @ResponseBody
-  Book save(@RequestBody Book book) {
+  public Book save(@RequestBody Book book) {
     return bookService.save(book);
   }
 
   @PostMapping("/findAll")
-  public @ResponseBody
-  List<Book> findAll(@RequestBody BookPage bookPage) {
+  public List<Book> findAll(@RequestBody BookPage bookPage) {
     log.info("findAll post [bookPage: {}]", bookPage);
     return bookService.findAll(bookPage);
   }
 
   @GetMapping("/findAll")
-  public @ResponseBody
-  List<Book> findAllGet(@RequestBody BookPage bookPage) {
+  public List<Book> findAllGet(@RequestBody BookPage bookPage) {
     log.info("findAll get [bookPage: {}]", bookPage);
     return bookService.findAll(bookPage);
+  }
+
+  @GetMapping("/count")
+  public long count() {
+    return bookService.count();
   }
 
   @PostMapping("/delete")
