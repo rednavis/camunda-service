@@ -9,7 +9,7 @@ public interface BookService {
 
   Book save(Book book);
 
-  List<Book> findAll(int page, int size);
+  List<Book> findAll(int limit, int offset);
 
   long count();
 

@@ -37,9 +37,9 @@ public class BookController {
   }
 
   @GetMapping("/findAll")
-  public List<Book> findAllGet(@RequestParam int page, @RequestParam int size) {
-    log.info("findAll get [page: {}, size: {}]", page, size);
-    return bookService.findAll(page, size);
+  public List<Book> findAllGet(@RequestParam int limit, @RequestParam int offset) {
+    log.info("findAll get [limit: {}, offset: {}]", limit, offset);
+    return bookService.findAll(limit, offset);
   }
 
   @GetMapping("/count")
@@ -50,6 +50,7 @@ public class BookController {
   @DeleteMapping("/delete")
   @ResponseStatus(value = HttpStatus.OK)
   public void delete(@RequestParam String bookId) {
+    log.info("delete [bookId: {}]", bookId);
     bookService.deleteById(bookId);
   }
 
@@ -59,12 +60,6 @@ public class BookController {
     StringResponse stringResponse = new StringResponse();
     stringResponse.setResponse("Hello World!");
     return stringResponse;
-  }
-
-  @GetMapping("/test2")
-  public @ResponseBody
-  List<Book> findAllGet() {
-    return bookService.findAll(2, 5);
   }
 
   @Data
