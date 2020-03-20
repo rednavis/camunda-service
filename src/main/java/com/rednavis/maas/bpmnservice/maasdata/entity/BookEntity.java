@@ -11,6 +11,7 @@ public class BookEntity {
 
   @Id
   private String id;
+  private int count;
   private String title;
   private String author;
   private int pageCount;

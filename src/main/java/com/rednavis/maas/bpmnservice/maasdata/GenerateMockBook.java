@@ -26,6 +26,7 @@ public class GenerateMockBook {
 
     MockNeat mock = MockNeat.threadLocal();
     List<BookEntity> bookEntityList = mock.filler(() -> new BookEntity())
+        .setter(BookEntity::setCount, mock.intSeq())
         .setter(BookEntity::setTitle, mock.countries().names())
         .setter(BookEntity::setAuthor, mock.users())
         .setter(BookEntity::setPageCount, mock.ints().range(100, 500))
