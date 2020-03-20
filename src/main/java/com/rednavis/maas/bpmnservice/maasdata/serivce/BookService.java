@@ -14,4 +14,6 @@ public interface BookService {
   long count();
 
   void deleteById(String bookId);
+
+  Book findById(String bookId);
 }

@@ -7,6 +7,7 @@ import com.rednavis.maas.bpmnservice.maasdata.dto.Book;
 import com.rednavis.maas.bpmnservice.maasdata.entity.BookEntity;
 import com.rednavis.maas.bpmnservice.maasdata.repository.BookRepository;
 import java.util.List;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.glassfish.jersey.internal.guava.Lists;
 import org.springframework.data.domain.Page;
@@ -49,5 +50,13 @@ public class BookServiceImpl implements BookService {
   @Override
   public void deleteById(String bookId) {
     bookRepository.deleteById(bookId);
+  }
+
+  @Override
+  public Book findById(String bookId) {
+    BookEntity bookEntity = new BookEntity();
+    bookEntity.setId(bookId);
+    bookEntity.setAuthor("LeshaRB");
+    return BOOK_MAPPER.entityToDto(bookEntity);
   }
 }

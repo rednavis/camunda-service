@@ -8,7 +8,7 @@
     <bpmn:userTask id="Task_139itjy" name="UserTask">
       <bpmn:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="stringParameter">${stringParameter}</camunda:inputParameter>
+          <camunda:inputParameter name="book" />
         </camunda:inputOutput>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_1mb0xsd</bpmn:incoming>
@@ -20,6 +20,11 @@
     <bpmn:sequenceFlow id="SequenceFlow_1rfzfpf" sourceRef="Task_139itjy" targetRef="EndEvent_145x5ce" />
     <bpmn:sequenceFlow id="SequenceFlow_1mb0xsd" sourceRef="Task_0ww0ns0" targetRef="Task_139itjy" />
     <bpmn:serviceTask id="Task_0ww0ns0" name="DemoTask" camunda:class="com.rednavis.maas.bpmnservice.delegate.DemoDelegate">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="bookId" />
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_1dc9w07</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1mb0xsd</bpmn:outgoing>
     </bpmn:serviceTask>
