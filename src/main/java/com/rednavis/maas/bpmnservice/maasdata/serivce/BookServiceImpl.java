@@ -54,9 +54,7 @@ public class BookServiceImpl implements BookService {
 
   @Override
   public Book findById(String bookId) {
-    BookEntity bookEntity = new BookEntity();
-    bookEntity.setId(bookId);
-    bookEntity.setAuthor("LeshaRB");
+    BookEntity bookEntity = bookRepository.findById(bookId).get();
     return BOOK_MAPPER.entityToDto(bookEntity);
   }
 }
